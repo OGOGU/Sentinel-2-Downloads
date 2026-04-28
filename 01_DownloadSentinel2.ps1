@@ -16,7 +16,7 @@ $psw="Password" #your password
 #Variables that must be modified if we want to change the search area or the product
 #--------------
 $prod="S2MSI1C" #product ID
-#$bbox="-10.80+35.80,4.79+35.80,4.79+44.02,-10.80+44.02,-10.80+35.80" #Península ibèrica
+#$bbox="-10.80+35.80,4.79+35.80,4.79+44.02,-10.80+44.02,-10.80+35.80" #PenÃ­nsula ibÃ¨rica
 $bbox="0.704+42.794,0.437+40.542,0.678+40.731,0.865+41.082,2.052+41.371,3.087+41.957,3.016+42.479,1.463+42.460,0.704+42.794,0.704+42.794" #Bounding box
 
 
@@ -118,7 +118,7 @@ function DescarregaZIP ($id, $ZIPname, $dwnld, $token, $status)
         #we check that the download has completed correctly (correct exit code and file larger than 100 bytes) --> when the download fails, if we do nothing a ~25-byte zip file is saved, which is actually a JSON saying {"detail":"Unauthorized"}
 		#otherwise, we delete the ZIP so that it can be downloaded again in the future
         if (($proces.ExitCode -ne 0) -or ((Test-Path $endle -PathType Leaf) -and ($size -le 100))) {
-                Write-Host "$status $endle $size ERROR EN LA DESCÀRREGA!" 
+                Write-Host "$status $endle $size ERROR EN LA DESCÃ€RREGA!" 
                 Remove-Item $endle -Force
         }else{
             if(Test-Path $endle -PathType Leaf){
@@ -191,7 +191,7 @@ if ($option -eq "R")
     $llistaDescarregats = "$temp\ImatgesDescarregades.csv"
     $csvSortida = "$temp\Imatges_NO_Descarregades.csv"
 
-    # Si ja existeixen llistes prèvies, les eliminem
+    # Si ja existeixen llistes prÃ¨vies, les eliminem
     if (Test-Path $llistaDescarregats -PathType Leaf) {
         Remove-Item $llistaDescarregats -Force
     }
