@@ -191,7 +191,7 @@ if ($option -eq "R")
     $llistaDescarregats = "$temp\ImatgesDescarregades.csv"
     $csvSortida = "$temp\Imatges_NO_Descarregades.csv"
 
-    # Si ja existeixen llistes prèvies, les eliminem
+    # If there are previous existing lists, we delete them
     if (Test-Path $llistaDescarregats -PathType Leaf) {
         Remove-Item $llistaDescarregats -Force
     }
